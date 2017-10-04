@@ -1,0 +1,14 @@
+_____.___.                                 ._.
+\__  |   | ____   ____   ____   ____   ____| |
+ /   |   |/  _ \ /  _ \ /  _ \ /  _ \ /  _ \ |
+ \____   (  <_> |  <_> |  <_> |  <_> |  <_> )|
+ / ______|\____/ \____/ \____/ \____/ \____/__
+ \/                                         \/
+
+
+ ${application.version}
+ ${application.formatted-version}
+ ${spring-boot.version}
+ ${spring-boot.formatted-version}
+ ${Ansi.NAME} (or ${AnsiColor.NAME}, ${AnsiBackground.NAME}, ${AnsiStyle.NAME})
+ ${application.title}

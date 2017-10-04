@@ -10,15 +10,16 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>spring-boot-demo-web</artifactId>
+    <!-- ここ修正 -->
+    <artifactId>spring-boot-demo-springaplication</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-demo-web</name>
-    <description>demo for spring boot web</description>
+    <!-- ここ修正 -->
+    <name>spring-boot-demo-springapplication</name>
+    <description>Demo for springapplication</description>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -33,6 +34,8 @@
             </plugin>
         </plugins>
 
-        <finalName>spring-boot-demo-web</finalName>
+
+        <finalName>spring-boot-demo-spring-application</finalName>
+
     </build>
 </project>

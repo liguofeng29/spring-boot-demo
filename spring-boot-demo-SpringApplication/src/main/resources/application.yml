@@ -1,0 +1,6 @@
+spring:
+  main:
+    # banner
+    banner-mode: console
+    # It is often desirable to call setWebEnvironment(false) when using SpringApplication within a JUnit test.
+    web-environment: true
