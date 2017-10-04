@@ -6,6 +6,7 @@
     * use the org.springframework.core.annotation.Order annotation if several CommandLineRunner 
     or ApplicationRunner beans are defined that must be called in a specific order.
 * Application exit
+* Admin features : spring.application.admin.enabled 
 
 ### build
 mvn clean package
@@ -20,9 +21,9 @@ mvn spring-boot:run
 ### check
 
 * SpringApplication argument injection
-    * run
+    * run  
 java -jar target/spring-boot-demo-spring-application.jar --debug logfile.txt debug=true
-    * url
+    * url  
 http://localhost:8080/
 
 
