@@ -26,7 +26,7 @@ public class FirstController {
     }
 
     @RequestMapping("/apple")
-    Apple json() {
+    Apple getApple() {
         // return json
         return apple;
     }

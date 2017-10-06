@@ -2,7 +2,7 @@
 * Banner
 * Web environment
 * Application events and listeners
-* ApplicatoinRunner
+* ApplicationRunner
     * use the org.springframework.core.annotation.Order annotation if several CommandLineRunner 
     or ApplicationRunner beans are defined that must be called in a specific order.
 * Application exit
@@ -21,7 +21,7 @@ mvn spring-boot:run
 ### check
 
 * SpringApplication argument injection
-    * run  
+    * run with   
 java -jar target/spring-boot-demo-spring-application.jar --debug logfile.txt debug=true
     * url  
 http://localhost:8080/

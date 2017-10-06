@@ -11,6 +11,8 @@ mvn spring-boot:run
 ### demo
 
 spring-boot-demo-web
-* web,banner
+
+spring-boot-demo-spring-application
+
 
 
