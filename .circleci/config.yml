@@ -1,0 +1,93 @@
+##
+# Require environment variables
+#
+#   - AWS__ACCESS_KEY_ID
+#   - AWS__SECRET_ACCESS_KEY
+#   - AWS_DEFAULT_REGION
+#   - AWS__SG_ID
+#
+#
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - run:
+          name: Update pip
+          command: |
+            pip install pip --upgrade
+      - run:
+          name: Install AWS CLI
+          command: |
+            pip install awscli --upgrade --user
+#      - run:
+#          name: Configure AWS
+#          command: |
+#            aws configure set default.region ${AWS_DEFAULT_REGION}
+#            aws configure set aws_access_key_id ${AWS_ARTIFACTORY__ACCESS_KEY_ID}
+#            aws configure set aws_secret_access_key ${AWS_ARTIFACTORY__SECRET_ACCESS_KEY}
+      - run:
+          name: Check Global IP address
+          command: |
+            echo "export CIDR=`curl -s -S http://checkip.amazonaws.com`/32" >> $BASH_ENV
+##      - run:
+##          name: Grant CicleCI dynamic IP
+##          command: |
+##            COMMAND_OUT=`aws                        \
+##              --cli-read-timeout 10                 \
+##              --cli-connect-timeout 10              \
+##              ec2                                   \
+##              authorize-security-group-ingress      \
+##              --group-id ${AWS_ARTIFACTORY__SG_ID}  \
+##              --protocol tcp                        \
+##              --port 80                             \
+##              --cidr $CIDR 2>&1` || COMMAND_RESULT=$?
+##            if [ ${COMMAND_RESULT:-0} -ne 0 ] && [[ ! "${COMMAND_OUT}" =~ "already exists" ]]; then
+##              exit $COMMAND_RESULT
+##            fi
+      - checkout
+      - run:
+          name: Install JDK
+          command: |
+            sudo add-apt-repository -y ppa:webupd8team/java
+            sudo apt-get update
+            echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+            echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+            sudo apt-get -y install oracle-java8-installer
+      - restore_cache:
+          keys:
+            - m2-cache-{{ checksum "pom.xml" }}
+      - run:
+          name: Build and Test
+          environment:
+          command: |
+            mvn clean test package || echo "export TEST_RESULT=${?}" >> $BASH_ENV
+            echo "TEST_RESULT [${TEST_RESULT:-0}]"
+      - save_cache:
+          key: m2-cache-{{ checksum "pom.xml" }}
+          paths:
+            - ~/.m2
+#      - store_artifacts:
+#          path: ./target/spring-boot-demo.jar
+##      - run:
+##          name: Revoke CicleCI dynamic IP
+##          command: |
+##            aws                                     \
+##              --cli-read-timeout 10                 \
+##              --cli-connect-timeout 10              \
+##              ec2                                   \
+##              revoke-security-group-ingress         \
+##              --group-id ${AWS_ARTIFACTORY__SG_ID}  \
+##              --protocol tcp                        \
+##              --port 80                             \
+##              --cidr `echo $CIDR`
+#      - run:
+#          name: Show artifact download command
+#          command: |
+#            echo "curl -o spring-boot-demo.jar https://${CIRCLE_BUILD_NUM}-105221680-gh.circle-artifacts.com/0/home/circleci/project/target/spring-boot-demo.jar?circle-token=${CIRCLECI_TOKEN}"
+      - run:
+          name: Exit result
+          command: |
+            echo $BASH_ENV
+            echo "TEST_RESULT [${TEST_RESULT:-0}]"
+            exit ${TEST_RESULT:-0}

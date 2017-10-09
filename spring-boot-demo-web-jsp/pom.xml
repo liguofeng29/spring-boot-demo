@@ -10,7 +10,7 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>spring-boot-demo-web</artifactId>
+    <artifactId>spring-boot-demo-web-jsp</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 
@@ -32,6 +32,6 @@
             </plugin>
         </plugins>
 
-        <finalName>spring-boot-demo-web</finalName>
+        <finalName>spring-boot-demo-web-jsp</finalName>
     </build>
 </project>

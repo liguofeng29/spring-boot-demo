@@ -10,17 +10,23 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>spring-boot-demo-web</artifactId>
+    <artifactId>spring-boot-demo-web-freemarker</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-demo-web</name>
-    <description>demo for spring boot web</description>
+    <name>spring-boot-demo-web-freemarker</name>
+    <description>demo for spring boot web with freemarker</description>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.2.1</version>
         </dependency>
     </dependencies>
 
@@ -32,6 +38,6 @@
             </plugin>
         </plugins>
 
-        <finalName>spring-boot-demo-web</finalName>
+        <finalName>spring-boot-demo-web-freemarker</finalName>
     </build>
 </project>
