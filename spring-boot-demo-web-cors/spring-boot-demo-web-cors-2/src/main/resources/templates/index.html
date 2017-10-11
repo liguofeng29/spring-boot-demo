@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Test CORS</title>
+</head>
+<body>
+It is a demo for CORS.
+
+<input id="api" type="button" value="call api"/>
+
+<script type="text/javascript" src="/webjars/jquery/3.2.1/jquery.min.js" about=""></script>
+<script>
+    $(function () {
+        $('#api').click(function () {
+            //alert("alert");
+
+            $.ajax({
+                url: "http://localhost:9000/api/now",
+                type: "POST",
+                data: {
+                    name : "TEST"
+                },
+                success: function (data, status, xhr) {
+                    alert("現在は" + data.now);
+                }
+            })
+        });
+    })
+</script>
+
+
+</body>
+</html>

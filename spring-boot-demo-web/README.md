@@ -20,6 +20,10 @@
     * FilterRegistrationBean
 3. use @WebServlet
 
+#### upload file
+
+
+
 ### build
 mvn clean package
 
@@ -38,3 +42,7 @@ mvn spring-boot:run
 #### registered
 http://localhost:8081/servlet1
 http://localhost:8081/servlet2
+
+
+#### file upload
+http://localhost:8081/file/index

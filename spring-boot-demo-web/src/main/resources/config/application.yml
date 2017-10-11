@@ -1,3 +1,11 @@
-## 開発環境server:
 server:
   port: 8081
+spring:
+  http:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 1Mb
+      max-request-size: 10MB
+      location: D:\working
+

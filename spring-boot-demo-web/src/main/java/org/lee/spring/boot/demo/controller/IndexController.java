@@ -7,7 +7,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/thymeleaf")
 public class IndexController {
 
     private Logger logger = LoggerFactory.getLogger(IndexController.class);

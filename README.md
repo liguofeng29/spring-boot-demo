@@ -1,12 +1,12 @@
 ### build
-mvn clean package
+mvnw clean package
 
 ### run
 java -jar target/xx.jar
 
 or 
 
-mvn spring-boot:run
+mvnw spring-boot:run
 
 ### demo
 
