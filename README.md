@@ -1,3 +1,7 @@
+### about
+
+embed H2 database and sparing data JPA
+
 ### build
 mvnw clean package
 

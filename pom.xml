@@ -29,6 +29,7 @@
         <module>spring-boot-demo-web-thymeleaf</module>
         <module>spring-boot-demo-SpringApplication</module>
         <module>spring-boot-demo-externalized_configuration</module>
+        <module>spring-boot-demo-jpa-h2</module>
     </modules>
 
 </project>

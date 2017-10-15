@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./target/db-name;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=TRUE
+    # on memory
+    # url: jdbc:h2:meme:test
+    data-password: sa
+    data-username:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jta:
+    atomikos:
+      properties:
+        console-log-level:
+logging:
+  level: debug
+
+
