@@ -1,6 +1,5 @@
 ### about
-
-embed H2 database and sparing data JPA
+spring boot demo
 
 ### build
 mvnw clean package
@@ -12,11 +11,6 @@ or
 
 mvnw spring-boot:run
 
-### demo
-
-spring-boot-demo-web
-
-spring-boot-demo-spring-application
 
 
 

@@ -1,7 +1,7 @@
 ### about 
-h2
+### about
 
-jpa
+embed H2 database and sparing data JPA
 
 Supported keywords inside method names:
 https://docs.spring.io/spring-data/jpa/docs/1.11.8.RELEASE/reference/html/#jpa.query-methods.query-creation
