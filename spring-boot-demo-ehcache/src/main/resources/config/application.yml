@@ -1,4 +1,10 @@
+server:
+  port: 8081
 spring:
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:config/ehcache.xml
   datasource:
     url: jdbc:h2:file:./target/db-name;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=TRUE
     # on memory
@@ -15,5 +21,3 @@ spring:
       path: /h2-console
 logging:
   level: debug
-
-
