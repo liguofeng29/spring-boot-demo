@@ -32,6 +32,7 @@
         <module>spring-boot-demo-jpa-h2</module>
         <module>spring-boot-demo-ehcache</module>
         <module>spring-boot-demo-rest-template</module>
+        <module>spring-boot-demo-session</module>
     </modules>
 
 </project>

@@ -1,0 +1,21 @@
+logging:
+  level: debug
+
+spring:
+  session:
+#      store-type: redis
+    store-type: hash_map
+#  redis:
+#    host: localhost
+#    port: 6379
+#    password: null
+#    database: 0
+#    pool:
+#      max-idle: 8
+#      min-idle: 0
+#      max-active: 8
+#      max-wait: -1
+
+#server:
+#  session:
+#    store-dir:
