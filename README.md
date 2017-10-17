@@ -11,6 +11,9 @@ or
 
 mvnw spring-boot:run
 
+### remote debug 
+java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n -jar target/target.jar
+
 
 
 
