@@ -33,6 +33,7 @@
         <module>spring-boot-demo-ehcache</module>
         <module>spring-boot-demo-rest-template</module>
         <module>spring-boot-demo-session</module>
+        <module>spring-boot-demo-actuator</module>
     </modules>
 
 </project>

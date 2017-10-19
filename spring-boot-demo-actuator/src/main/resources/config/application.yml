@@ -1,0 +1,18 @@
+management:
+  context-path: /actuator
+  security:
+    enabled: true
+    roles: SUPER_USER
+endpoints:
+  sensitive: true
+#  shutdown:
+#    enabled: true   ## remote shutdown
+security:
+  basic:
+    enabled: true
+    path: /actuator
+  user:
+    name: user
+    password: pass
+
+
