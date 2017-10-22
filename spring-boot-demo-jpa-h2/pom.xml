@@ -35,13 +35,6 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-
         <finalName>spring-boot-demo-jpa-h2</finalName>
     </build>
 </project>
